@@ -57,7 +57,10 @@ const HomePage = () => {
         break;
       default:
         if (isNaN(+button)) {
-          if (!isNaN(currentExpression.charAt(currentExpression.length - 1))) {
+          if (
+            !isNaN(currentExpression.charAt(currentExpression.length - 1)) &&
+            currentExpression.length > 0
+          ) {
             setCalcTextArea(currentExpression + button);
           }
         } else {
